@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading the board · Mullein</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #1c1c1c;
+        background: #fafaf7;
+        --accent: #3b4bc8;
+      }
+      body { margin: 0; }
+      header, main, footer { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      header a { color: var(--accent); }
+      .mark { font-weight: 700; color: var(--accent); }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.25rem);
+        margin: 2rem 0 1rem;
+        /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+        background: linear-gradient(90deg, #3b4bc8, #c83b9a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edges, no background. */
+      .edge { margin: 0; padding: 0; line-height: 1.6; max-width: none; }
+      table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+      th, td { text-align: left; padding: 0.5rem 0.25rem; border-bottom: 1px solid #e5e5e0; }
+      /* Intentional, for Impeccable's test drive: low-contrast text, light grey on the page background. */
+      .note { color: #c9c9c4; }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      .small-link { font-size: 10px; color: var(--accent); }
+      /* Intentional, for Impeccable's test drive: transition on a layout property. */
+      .meter { height: 0.6rem; width: 30%; background: var(--accent); border-radius: 0.3rem; transition: width 0.3s; }
+      .meter:hover { width: 100%; }
+      /* Intentional, for Impeccable's test drive: a hard-coded colour outside the palette. */
+      .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 0.5rem; background: #ff6b00; color: #fff; font-size: 0.85rem; }
+      footer { color: #777; font-size: 0.9rem; border-top: 1px solid #e5e5e0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="mark">Mullein</span>
+      <a href="/">Back to the board</a>
+    </header>
+    <p class="edge">The board shows the five newest items from the shared list, newest first, so a glance is enough to know what is open and what is already done.</p>
+    <main>
+      <h1>Reading the board</h1>
+      <p>Each row on the board is one item. A tick means it is done; no tick means it is still waiting.</p>
+      <table>
+        <thead>
+          <tr><th>Mark</th><th>Meaning</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>✓</td><td>Done and kept for reference</td><td>✓ Book the venue</td></tr>
+          <tr><td>(none)</td><td>Open and waiting</td><td>Send the invitations</td></tr>
+          <tr><td><span class="badge">New</span></td><td>Added in the last day</td><td>Order the flowers</td></tr>
+        </tbody>
+      </table>
+      <p>This week's progress</p>
+      <div class="meter" role="img" aria-label="Three of ten items done"></div>
+      <p class="note">Items older than a month drop off the board automatically.</p>
+      <p><a class="small-link" href="/#live">Jump to the live list</a></p>
+    </main>
+    <footer>Mullein · the board, at a glance</footer>
+  </body>
+</html>
