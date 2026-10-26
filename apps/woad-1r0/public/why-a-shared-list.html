@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why a shared list · Woad</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #1c1c1c;
+        background: #fafaf7;
+        --accent: #2f7d4f;
+      }
+      body { margin: 0; }
+      header, main, footer { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      header a { color: var(--accent); }
+      .mark { font-weight: 700; color: var(--accent); }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.25rem);
+        margin: 2rem 0 1rem;
+        /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+        background: linear-gradient(90deg, #2f7d4f, #d4a017);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edges, no background. */
+      .edge { margin: 0; padding: 0; line-height: 1.6; max-width: none; }
+      ul.reasons { padding-left: 1.2rem; line-height: 1.8; }
+      /* Intentional, for Impeccable's test drive: low-contrast text, light grey on the page background. */
+      .note { color: #c9c9c4; }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      .small-link { font-size: 10px; color: var(--accent); }
+      /* Intentional, for Impeccable's test drive: transition on a layout property. */
+      .meter { height: 0.6rem; width: 30%; background: var(--accent); border-radius: 0.3rem; transition: width 0.3s; }
+      .meter:hover { width: 100%; }
+      /* Intentional, for Impeccable's test drive: a hard-coded colour outside the palette. */
+      .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 0.5rem; background: #e0457b; color: #fff; font-size: 0.85rem; }
+      footer { color: #777; font-size: 0.9rem; border-top: 1px solid #e5e5e0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="mark">Woad</span>
+      <a href="/">Back to the front door</a>
+    </header>
+    <p class="edge">Woad is the quiet way in: one list that everyone you work with can read, so nobody has to ask what is happening or what comes next.</p>
+    <main>
+      <h1>Why a shared list</h1>
+      <p>A single list saves the small conversations that slow a day down. Here is what people notice first:</p>
+      <ul class="reasons">
+        <li>Everyone sees the same items in the same order.</li>
+        <li>Finished work stays visible, so it is easy to say thank you.</li>
+        <li>New items appear the moment someone adds them <span class="badge">Live</span></li>
+      </ul>
+      <p>Teams using it this month</p>
+      <div class="meter" role="img" aria-label="Three in ten teams on the list"></div>
+      <p class="note">Nothing to install: open the page and the list is there.</p>
+      <p><a class="small-link" href="/#live">See the live list</a></p>
+    </main>
+    <footer>Woad · the front door to the shared list</footer>
+  </body>
+</html>
